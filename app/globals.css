@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Manrope, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Core colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    
+    /* Enhanced color system */
+    --accent-1: 217 91% 60%;  /* Blue for technical */
+    --accent-2: 162 84% 39%;  /* Green for leadership */
+    --accent-3: 38 92% 50%;   /* Orange for innovation */
+    
+    /* Card and UI elements */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    
+    /* Primary brand colors */
+    --primary: 267 75% 50%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary and accent colors */
+    --secondary: 267 50% 95%;
+    --secondary-foreground: 267 75% 30%;
+    --accent: 315 70% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* UI state colors */
+    --muted: 267 20% 96%;
+    --muted-foreground: 267 30% 45%;
+    --border: 267 20% 90%;
+    --input: 267 20% 90%;
+    --ring: 267 75% 50%;
+    
+    /* Chart colors */
+    --chart-1: var(--accent-1);
+    --chart-2: var(--accent-2);
+    --chart-3: var(--accent-3);
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    /* Other */
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    /* Core colors */
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+    
+    /* Enhanced color system in dark mode */
+    --accent-1: 217 91% 50%;  /* Adjusted blue */
+    --accent-2: 162 84% 34%;  /* Adjusted green */
+    --accent-3: 38 92% 45%;   /* Adjusted orange */
+    
+    /* Card and UI elements */
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary brand colors */
+    --primary: 267 75% 60%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary and accent colors */
+    --secondary: 267 50% 15%;
+    --secondary-foreground: 267 75% 80%;
+    --accent: 315 70% 50%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* UI state colors */
+    --muted: 267 20% 15%;
+    --muted-foreground: 267 30% 70%;
+    --border: 267 20% 20%;
+    --input: 267 20% 20%;
+    --ring: 267 75% 60%;
+    
+    /* Chart colors - adjusted for dark mode */
+    --chart-1: var(--accent-1);
+    --chart-2: var(--accent-2);
+    --chart-3: var(--accent-3);
+    --chart-4: 280 65% 55%;
+    --chart-5: 340 75% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(128, 90, 213, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 90, 213, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hero Section Styles */
+.hero-illustration {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-illustration {
+    animation: none !important;
+  }
+  
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Scroll-triggered animations */
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Timeline connector styles */
+.timeline-connector {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    theme('colors.purple.400') 15%,
+    theme('colors.purple.600') 50%,
+    theme('colors.purple.400') 85%,
+    transparent 100%
+  );
+}
+
+/* Enhance card hover effects */
+.timeline-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions for all interactive elements */
+.timeline-item * {
+  transition: all 0.2s ease-out;
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-brand {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+}
+
+.bg-gradient-technical {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent-1)) 0%,
+    hsl(var(--primary)) 100%
+  );
+}
+
+.bg-gradient-leadership {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent-2)) 0%,
+    hsl(var(--primary)) 100%
+  );
+}
+
+.bg-gradient-innovation {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--accent-3)) 0%,
+    hsl(var(--primary)) 100%
+  );
+}
+
+/* Enhanced card styles */
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-lg hover:shadow-purple-500/10;
+  @apply dark:hover:shadow-purple-400/5;
+}
+
+/* Enhanced text gradients */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-purple-600 to-blue-600;
+  @apply dark:from-purple-400 dark:to-blue-400;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(to right, hsl(var(--accent-2)) 0%, hsl(var(--primary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
