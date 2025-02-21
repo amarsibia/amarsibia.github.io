@@ -22,8 +22,8 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/your-actual-repo-name' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/your-actual-repo-name/' : '',
+  basePath: '',
+  assetPrefix: '',
 }
 
 mergeConfig(nextConfig, userConfig)
