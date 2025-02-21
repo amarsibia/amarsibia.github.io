@@ -24,9 +24,9 @@ const Header = () => {
             <Link href="#experience" className="hover:text-primary transition-colors">
               Experience
             </Link>
-            <Link href="#projects" className="hover:text-primary transition-colors">
+            {/* <Link href="#projects" className="hover:text-primary transition-colors">
               Projects
-            </Link>
+            </Link> */}
             <Link href="#skills" className="hover:text-primary transition-colors">
               Skills
             </Link>

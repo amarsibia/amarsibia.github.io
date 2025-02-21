@@ -15,6 +15,7 @@ interface TimelineEvent {
   metrics?: string[]
   technologies: string[]
   logo: string
+  projects?: TimelineEvent[]
 }
 
 const timeline: TimelineEvent[] = [
@@ -23,101 +24,193 @@ const timeline: TimelineEvent[] = [
     role: "Head of Engineering",
     company: "Openr",
     period: "June 2024 - Present",
-    description: "Leading engineering initiatives and driving technical innovation.",
-    logo: "/logos/openr.svg",
+    description: "Leading development teams for a SaaS startup in the hospitality industry, focusing on product development and technical strategy.",
     achievements: [
-      "Building and scaling engineering teams",
-      "Implementing modern tech practices",
-      "Driving architectural decisions"
+      "Pioneered development team's efforts to deliver compelling proof of concept",
+      "Secured Series A funding",
+      "Established industry-leading data model",
+      "Led cross-functional teams in delivering cutting-edge solutions",
+      "Championed quality throughout the SDLC",
+      "Provided technical guidance and mentorship"
     ],
-    technologies: ["React", "Node.js", "AWS", "TypeScript", "Python"]
+    technologies: [
+      "TypeScript",
+      "NodeJS",
+      "Lambda",
+      "Serverless Framework",
+      "PostgreSQL",
+      "REST",
+      "React",
+      "AWS",
+      "Ansible",
+      "AWX",
+      "GitHub"
+    ],
+    logo: "/logos/openr.svg"
   },
   {
     year: "2023",
     role: "Technical Manager",
     company: "Tripadvisor",
     period: "September 2023 - May 2024",
-    description: "Managed technical teams and projects in the travel technology sector.",
-    logo: "/logos/tripadvisor.svg",
-    achievements: [
-      "Led cross-functional teams",
-      "Improved system performance",
-      "Mentored junior engineers"
-    ],
-    technologies: ["React", "Node.js", "AWS", "TypeScript", "Python"]
+    description: "Served as Technical Manager focusing on engineering leadership and technical strategy.",
+    achievements: [],
+    technologies: [],
+    logo: "/logos/tripadvisor.svg"
   },
-  {
-    year: "2020",
-    role: "Engineering Manager",
-    company: "Robert Walters Group",
-    period: "October 2020 - March 2022",
-    description: "Led development of global CRM system, grew technical workforce by 50%, and aligned project objectives with business goals.",
-    logo: "/logos/rw.jpg",
-    achievements: [
-      "Led digital transformation initiatives",
-      "Established engineering excellence programs",
-      "Mentored and developed 20+ engineers"
-    ],
-    technologies: ["TypeScript", "Node.js", "Java", "Kafka", "GraphQL", "PostgreSQL"]
-  },
-  {
-    year: "2020",
-    role: "Senior Software Engineer",
-    company: "ASOS.com",
-    period: "July 2020 - October 2020",
-    description: "Led development initiatives in e-commerce platform engineering.",
-    logo: "/logos/asos.svg",
-    achievements: [
-      "Contributed to e-commerce platform development",
-      "Implemented high-performance features",
-      "Collaborated with cross-functional teams"
-    ],
-    technologies: ["React", "Node.js", ".NET", "Azure", "Microservices"]
-  },
-  {
-    year: "2018",
-    role: "Senior Software Consultant",
-    company: "Capita",
-    period: "February 2018 - March 2020",
-    description: "Designed and implemented a greenfield full stack system, transitioning manual processes to automated processes.",
-    logo: "/logos/capita.svg",
-    achievements: [
-      "Led complete project lifecycle from documentation to release",
-      "Designed and implemented new UI and .NET services",
-      "Converted functional requirements into technical solutions",
-      "Planned releases with key stakeholders"
-    ],
-    technologies: [".NET", "SQL Server", "Angular", "Azure", "CI/CD"]
-  },
-  {
-    year: "2016",
-    role: "Senior Software Consultant",
-    company: "Hewlett Packard Enterprise",
-    period: "February 2016 - March 2020",
-    description: "Designed and implemented a bespoke full stack system for 5,000+ users, including a high-throughput SOAP integration adapter.",
-    logo: "/logos/hpe.svg",
-    achievements: [
-      "Led end-to-end project lifecycle",
-      "Designed and implemented bespoke systems",
-      "Created high-throughput SOAP Java services",
-      "Managed increased scope demands"
-    ],
-    technologies: ["Java", "Spring", "SOAP", "Oracle", "Angular"]
+  { year: "2020",
+    role: "Principal Software Engineer",
+    company: "AND Digital",
+    period: "July 2020 - September 2023",
+    description: "Led development team for a SaaS startup in the hospitality industry, focusing on product development and technical strategy.",
+    achievements: [],
+    technologies: [],
+    logo: "/logos/and-digital.svg",
+    projects: [
+      {
+        year: "2022",
+        role: "Head of Engineering",
+        company: "Openr",
+        period: "January 2022 - September 2023",
+        description: "Led development team for a SaaS startup in the hospitality industry, focusing on product development and technical strategy.",
+        achievements: [
+          "Pioneered development team's efforts to deliver compelling proof of concept",
+          "Secured Series A funding",
+          "Established industry-leading data model",
+          "Led cross-functional teams in delivering cutting-edge solutions",
+          "Championed quality throughout the SDLC",
+          "Provided technical guidance and mentorship"
+        ],
+        technologies: [
+          "TypeScript",
+          "NodeJS",
+          "Lambda",
+          "Serverless Framework",
+          "PostgreSQL",
+          "REST",
+          "React",
+          "AWS",
+          "Ansible",
+          "AWX",
+          "GitHub"
+        ],
+        logo: "/logos/openr.svg"
+      },
+      {
+        year: "2020",
+        role: "Engineering Manager",
+        company: "Robert Walters Group",
+        period: "October 2020 - March 2022",
+        description: "Led the development and deployment of a transformative global CRM system.",
+        achievements: [
+          "Spearheaded developing and deploying custom global CRM system",
+          "Expanded technical workforce by 50%",
+          "Successfully executed roadmap across multiple global regions",
+          "Aligned project initiatives with business strategies"
+        ],
+        metrics: [
+          "50% technical workforce growth",
+          "Multiple global region deployments"
+        ],
+        technologies: [
+          "TypeScript",
+          "NodeJS",
+          "Java",
+          "Kafka",
+          "GraphQL",
+          "PostgreSQL",
+          "CQRS",
+          "REST",
+          "React",
+          "AWS",
+          "GitHub"
+        ],
+        logo: "/logos/rw.jpg"
+      },
+      {
+        year: "2020",
+        role: "Senior Software Engineer",
+        company: "ASOS.com",
+        period: "July 2020 - October 2020",
+        description: "Contributed to technical development at ASOS as Senior Software Engineer.",
+        achievements: ["Defined and implemented a new deployment pipeline for backend services"],
+        technologies: [],
+        logo: "/logos/asos.svg"
+      },
+    ]
   },
   {
     year: "2013",
-    role: "Senior Software Engineer",
-    company: "Capita",
-    period: "April 2013 - October 2015",
-    description: "Led development of large-scale system changes using open source Java technologies for high-performance, low-latency solutions.",
-    logo: "/logos/capita.svg",
-    achievements: [
-      "Led multiple development teams",
-      "Drove core architectural designs",
-      "Managed multiple stakeholder relationships",
-      "Supported day-to-day operations"
-    ],
-    technologies: ["Java", "Spring", "Hibernate", "MySQL", "Jenkins"]
+    role: "Director",
+    company: "ASDAC",
+    period: "April 2013 - July 2020",
+    description: "Led development of large-scale system changes using open source Java technologies for high-performance solutions.",
+    achievements: [],
+    technologies: [],
+    logo: "/logos/asdac.svg",
+    projects:[
+      {
+        year: "2018",
+        role: "Senior Software Consultant",
+        company: "Capita",
+        period: "February 2018 - March 2020",
+        description: "Designed and implemented a greenfield full stack system, transitioning manual processes to automated solutions.",
+        achievements: [
+          "Led full project lifecycle from documentation to release",
+          "Implemented new UI and .NET services",
+          "Managed stakeholder relationships and release planning"
+        ],
+        technologies: [
+          ".NET",
+          "React",
+          "NodeJS",
+          "TypeScript"
+        ],
+        logo: "/logos/capita.svg"
+      },
+      {
+        year: "2016",
+        role: "Senior Software Consultant",
+        company: "Hewlett Packard Enterprise",
+        period: "February 2016 - March 2020",
+        description: "Designed and implemented a bespoke full stack system for over 5,000 users, including high-throughput SOAP integration.",
+        achievements: [
+          "Built system serving 5,000+ users",
+          "Developed high-throughput SOAP integration adapter",
+          "Led full project lifecycle",
+          "Managed scope changes and client requirements"
+        ],
+        metrics: [
+          "5,000+ user system deployment"
+        ],
+        technologies: [
+          "Angular",
+          "JavaScript",
+          "Java",
+          "SOAP",
+          "Full Stack Development"
+        ],
+        logo: "/logos/hpe.svg"
+      },
+      {
+        year: "2013",
+        role: "Senior Software Engineer",
+        company: "Capita",
+        period: "April 2013 - October 2015",
+        description: "Led development of large-scale system changes using open source Java technologies for high-performance solutions.",
+        achievements: [
+          "Led multiple development teams",
+          "Drove core architectural designs",
+          "Managed complex operational systems integration",
+          "Supported day-to-day operations"
+        ],
+        technologies: [
+          "Java",
+          "Open Source Technologies"
+        ],
+        logo: "/logos/capita.svg"
+      }
+      ]
   },
   {
     year: "2011",
@@ -239,7 +332,8 @@ const Timeline = () => {
                       {event.description}
                     </motion.p>
 
-                    {/* Achievements */}
+                      {/* Achievements */}
+                    {event.achievements.length > 0 && (
                     <div className="mb-4">
                       <h4 className="font-semibold mb-2 text-purple-600 dark:text-purple-400">
                         Key Achievements
@@ -250,8 +344,9 @@ const Timeline = () => {
                             • {achievement}
                           </li>
                         ))}
-                      </ul>
-                    </div>
+                        </ul>
+                      </div>
+                    )}
 
                     {/* Technologies */}
                     <div>
@@ -270,6 +365,86 @@ const Timeline = () => {
                         ))}
                       </div>
                     </div>
+
+                    {/* Projects Section */}
+                    {event.projects && event.projects.length > 0 && (
+                      <div className="mt-6 pt-6 border-t border-purple-100 dark:border-purple-800/30">
+                        <h4 className="font-semibold mb-4 text-purple-600 dark:text-purple-400">
+                          Projects
+                        </h4>
+                        <div className="space-y-4">
+                          {event.projects.map((project, projectIndex) => (
+                            <motion.div
+                              key={`${project.year}-${project.company}`}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: projectIndex * 0.1 }}
+                              className="bg-purple-50/50 dark:bg-purple-900/20 rounded-lg p-4"
+                            >
+                              <div className="flex items-center gap-3 mb-3 justify-between">
+                                <div className="relative w-12 h-12">
+                                  <Image
+                                    src={project.logo}
+                                    alt={project.company}
+                                    fill
+                                    className="object-contain rounded"
+                                  />
+                                </div>
+                                <div>
+                                  <div className="flex items-center gap-2 flex-col">
+                                    <span className="text-sm text-muted-foreground">
+                                      {project.period}
+                                    </span>
+                                  </div>
+                                  <h5 className="font-semibold text-foreground">
+                                    {project.role}
+                                  </h5>
+                                  <p className="text-sm text-purple-600 dark:text-purple-400">
+                                    {project.company}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <p className="text-sm text-foreground/80 dark:text-foreground/70 mb-3">
+                                {project.description}
+                              </p>
+
+                              {project.achievements.length > 0 && (
+                                <div className="mb-3">
+                                  <h6 className="text-sm font-medium mb-1 text-purple-600 dark:text-purple-400">
+                                    Achievements
+                                  </h6>
+                                  <ul className="text-xs space-y-1">
+                                    {project.achievements.map((achievement, i) => (
+                                      <li key={i} className="text-foreground/70 dark:text-foreground/60">
+                                        • {achievement}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                              {project.technologies.length > 0 && (
+                                <div className={`flex flex-wrap gap-1 ${
+                                  index % 2 === 0 ? 'justify-end' : 'justify-start'
+                                }`}>
+                                  {project.technologies.map((tech, i) => (
+                                    <span
+                                      key={i}
+                                      className="px-2 py-0.5 bg-purple-100/50 dark:bg-purple-900/40 
+                                               text-purple-600 dark:text-purple-400 rounded-full 
+                                               text-xs font-medium"
+                                    >
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                              )}
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 </div>
               

@@ -6,7 +6,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Calendar, Clock, Send, Loader2 } from "lucide-react"
+import { Mail, Calendar, Clock, Send, Loader2, Linkedin } from "lucide-react"
 
 const Contact = () => {
   const { ref, inView } = useScrollAnimation()
@@ -40,7 +40,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-8">
-              <div>
+              <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4">Contact Details</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
@@ -50,13 +50,19 @@ const Contact = () => {
                     </a>
                   </div>
                   <div className="flex items-center space-x-3">
+                    <Linkedin className="text-purple-600 dark:text-purple-400" />
+                    <a href="https://www.linkedin.com/in/amarsibia/" className="hover:text-purple-600 dark:hover:text-purple-400">
+                      LinkedIn
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-3">
                     <Clock className="text-purple-600 dark:text-purple-400" />
                     <span>GMT (London) • Response within 24 hours</span>
                   </div>
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="text-xl font-semibold mb-4">Schedule a Call</h3>
                 <Button className="flex items-center space-x-2" asChild>
                   <a href="https://calendly.com/your-link" target="_blank" rel="noopener noreferrer">
@@ -64,9 +70,9 @@ const Contact = () => {
                     Book a Meeting
                   </a>
                 </Button>
-              </div>
-
-              <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+              </div> */}
+</div><div>
+              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-4">Preferred Topics</h3>
                 <ul className="space-y-2">
                   <li>• Engineering Leadership & Team Building</li>
@@ -78,7 +84,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+            {/* <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -146,7 +152,7 @@ const Contact = () => {
                   </Button>
                 </form>
               )}
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>
