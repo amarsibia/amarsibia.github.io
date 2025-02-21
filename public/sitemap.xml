@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://amarsibia.github.io/</loc>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://amarsibia.com/sitemap-main.xml</loc>
     <lastmod>2025-02-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+  </sitemap>
+  <sitemap>
+    <loc>https://amarsibia.github.io/sitemap-main.xml</loc>
+    <lastmod>2025-02-21</lastmod>
+  </sitemap>
+</sitemapindex>

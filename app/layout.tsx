@@ -6,6 +6,13 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Manrope({ subsets: ["latin"] })
 
 export const metadata = {
+  metadataBase: new URL('https://amarsibia.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': 'https://amarsibia.com',
+    },
+  },
   title: "Amar Sibia - Engineering Leader & Tech Innovator",
   description: "Personal website of Amar Sibia, Head of Engineering at Openr. Experienced in software architecture, team leadership, and technical innovation.",
   keywords: ["Engineering Leader", "Tech Innovator", "Software Architecture", "Team Leadership", "Technical Innovation", "Amar Sibia"],
@@ -15,11 +22,14 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Amar Sibia",
+    url: 'https://amarsibia.com',
+    alternateLocale: 'en_US',
   },
   twitter: {
     card: "summary_large_image",
     title: "Amar Sibia - Engineering Leader & Tech Innovator",
     description: "Personal website of Amar Sibia, Head of Engineering at Openr",
+    site: '@amarsibia', // Add your Twitter handle if you have one
   },
   robots: {
     index: true,

@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Primary domain sitemap
+Sitemap: https://amarsibia.com/sitemap.xml
+
+# GitHub Pages domain sitemap
 Sitemap: https://amarsibia.github.io/sitemap.xml
+
+# Prevent duplicate content indexing
+Host: https://amarsibia.com
