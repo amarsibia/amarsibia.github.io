@@ -126,20 +126,20 @@ const Hero: FC = () => {
             </Button>
           </div>
 
-          {/* <motion.div 
+          <motion.div 
             className="relative w-64 h-64 md:w-96 md:h-96 mx-auto"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Image
-              src="/images/profile2.png"
+              src="/images/profile.webp"
               alt="Professional headshot"
               fill
-              className="rounded-2xl object-cover shadow-2xl"
+              className="rounded-2xl object-cover shadow-2xl dark:invert"
               priority
             />
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </motion.section>
