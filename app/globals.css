@@ -29,22 +29,22 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     
-    /* Primary brand colors */
-    --primary: 267 75% 50%;
+    /* Primary brand colors - Updated to blue */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
     
-    /* Secondary and accent colors */
-    --secondary: 267 50% 95%;
-    --secondary-foreground: 267 75% 30%;
-    --accent: 315 70% 60%;
+    /* Secondary and accent colors - Updated to complement blue */
+    --secondary: 217 50% 95%;
+    --secondary-foreground: 217 75% 30%;
+    --accent: 217 70% 60%;
     --accent-foreground: 0 0% 98%;
     
-    /* UI state colors */
-    --muted: 267 20% 96%;
-    --muted-foreground: 267 30% 45%;
-    --border: 267 20% 90%;
-    --input: 267 20% 90%;
-    --ring: 267 75% 50%;
+    /* UI state colors - Updated to blue theme */
+    --muted: 217 20% 96%;
+    --muted-foreground: 217 30% 45%;
+    --border: 217 20% 90%;
+    --input: 217 20% 90%;
+    --ring: 217 75% 50%;
     
     /* Chart colors */
     --chart-1: var(--accent-1);
@@ -70,32 +70,26 @@ body {
     --foreground: 0 0% 98%;
     
     /* Enhanced color system in dark mode */
-    --accent-1: 217 91% 50%;  /* Adjusted blue */
-    --accent-2: 162 84% 34%;  /* Adjusted green */
-    --accent-3: 38 92% 45%;   /* Adjusted orange */
+    --accent-1: 217 91% 50%;
+    --accent-2: 162 84% 34%;
+    --accent-3: 38 92% 45%;
     
-    /* Card and UI elements */
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
-    
-    /* Primary brand colors */
-    --primary: 267 75% 60%;
+    /* Primary brand colors - Updated to blue */
+    --primary: 217 75% 60%;
     --primary-foreground: 0 0% 98%;
     
-    /* Secondary and accent colors */
-    --secondary: 267 50% 15%;
-    --secondary-foreground: 267 75% 80%;
-    --accent: 315 70% 50%;
+    /* Secondary and accent colors - Updated to complement blue */
+    --secondary: 217 50% 15%;
+    --secondary-foreground: 217 75% 80%;
+    --accent: 217 70% 50%;
     --accent-foreground: 0 0% 98%;
     
-    /* UI state colors */
-    --muted: 267 20% 15%;
-    --muted-foreground: 267 30% 70%;
-    --border: 267 20% 20%;
-    --input: 267 20% 20%;
-    --ring: 267 75% 60%;
+    /* UI state colors - Updated to blue theme */
+    --muted: 217 20% 15%;
+    --muted-foreground: 217 30% 70%;
+    --border: 217 20% 20%;
+    --input: 217 20% 20%;
+    --ring: 217 75% 60%;
     
     /* Chart colors - adjusted for dark mode */
     --chart-1: var(--accent-1);
@@ -245,22 +239,22 @@ body {
   @apply dark:hover:shadow-purple-400/5;
 }
 
-/* Enhanced text gradients */
+/* Enhanced text gradients - Updated to blue theme */
 .text-gradient {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-r from-purple-600 to-blue-600;
-  @apply dark:from-purple-400 dark:to-blue-400;
+  @apply bg-gradient-to-r from-blue-600 to-blue-400;
+  @apply dark:from-blue-400 dark:to-blue-300;
 }
 
 .gradient-text {
-  background: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  background: linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent-1)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-alt {
-  background: linear-gradient(to right, hsl(var(--accent-2)) 0%, hsl(var(--primary)) 100%);
+  background: linear-gradient(to right, hsl(var(--accent-1)) 0%, hsl(var(--primary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
