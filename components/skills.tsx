@@ -27,7 +27,7 @@ const skillCategories = [
     skills: [
       "Big Data Processing",
       "Machine Learning",
-      "Data Visualization",
+      "Data Visualisation",
       "Predictive Analytics",
       "Natural Language Processing",
     ],

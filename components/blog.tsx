@@ -17,7 +17,7 @@ const blogPosts = [
   },
   {
     title: "Building a Culture of Innovation in Engineering Teams",
-    excerpt: "Strategies for fostering creativity and innovation within your engineering organization.",
+    excerpt: "Strategies for fostering creativity and innovation within your engineering organisation.",
     date: "2023-03-10",
     slug: "building-culture-of-innovation",
   },

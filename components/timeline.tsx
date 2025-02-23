@@ -31,7 +31,9 @@ const timeline: TimelineEvent[] = [
       "Established industry-leading data model",
       "Led cross-functional teams in delivering cutting-edge solutions",
       "Championed quality throughout the SDLC",
-      "Provided technical guidance and mentorship"
+      "Provided technical guidance and mentorship",
+      "Optimised deployment pipeline",
+      "Standardised development practices"
     ],
     technologies: [
       "TypeScript",

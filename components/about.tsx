@@ -92,7 +92,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-xl mb-2">Strategic Vision</h3>
-                  <p>Aligning technical strategy with business goals to drive organizational success.</p>
+                  <p>Aligning technical strategy with business goals to drive organisational success.</p>
                 </div>
               </div>
             </motion.div>

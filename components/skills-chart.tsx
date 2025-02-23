@@ -18,7 +18,7 @@ const skillCategories: SkillCategory[] = [
       "Technical Strategy",
       "Agile Methodologies",
       "Mentorship",
-      "Process Optimization",
+      "Process Optimisation",
       "Cross-functional Leadership"
     ]
   },
