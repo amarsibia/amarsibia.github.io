@@ -15,52 +15,75 @@ const Hero: FC = () => {
       transition={{ duration: 0.8 }}
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Animated Gradient Background */}
+      {/* Animated Gradient Background
       <motion.div 
         className="absolute inset-0 -z-10"
         animate={{
           background: [
-            'linear-gradient(45deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%)',
-            'linear-gradient(45deg, rgba(236, 72, 153, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%)',
+            'linear-gradient(45deg, rgba(168, 85, 247, 0.3) 0%, rgba(236, 72, 153, 0.3) 100%)',
+            'linear-gradient(45deg, rgba(236, 72, 153, 0.3) 0%, rgba(168, 85, 247, 0.3) 100%)',
           ],
         }}
         transition={{
-          duration: 10,
+          duration: 5,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "linear"
+          ease: "easeInOut"
         }}
-      />
+      /> */}
 
       {/* Gradient Orbs */}
       <motion.div 
-        className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/40 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.2, 0.3],
+          opacity: [0.4, 0.6, 0.4],
+          x: [0, 200, -200, 0],
+          y: [0, -200, 200, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 20,
           repeat: Infinity,
           repeatType: "reverse",
+          ease: "easeInOut"
         }}
       />
       <motion.div 
-        className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/40 rounded-full blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.8, 0.5],
+          opacity: [0.6, 0.8, 0.6],
+          x: [0, -200, 200, 0],
+          y: [0, 200, -200, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 25,
           repeat: Infinity,
           repeatType: "reverse",
+          ease: "easeInOut"
+        }}
+      />
+
+      {/* Pink orb with circular motion */}
+      <motion.div 
+        className="absolute top-1/2 right-1/3 w-80 h-80 bg-pink-500/30 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.3, 0.5, 0.3],
+          x: [0, 200, 0, -200, 0],
+          y: [0, 200, 400, 200, 0],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeInOut"
         }}
       />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6 backdrop-blur-sm bg-white/5 p-8 rounded-2xl">
+          <div className="space-y-6 p-8 rounded-2xl">
             <motion.h1 
               className="text-4xl md:text-6xl font-bold mb-6"
               initial={{ opacity: 0 }}
@@ -110,7 +133,7 @@ const Hero: FC = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Image
-              src="/images/profile.png"
+              src="/images/profile2.png"
               alt="Professional headshot"
               fill
               className="rounded-2xl object-cover shadow-2xl"
