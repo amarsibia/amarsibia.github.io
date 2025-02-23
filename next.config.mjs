@@ -18,14 +18,17 @@ const nextConfig = {
   images: {
     // Enable image optimization
     unoptimized: true,
-    domains: [], // Add domains for external images if needed
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    optimizeCss: true,
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
   output: 'export',
   basePath: '',
@@ -36,6 +39,7 @@ const nextConfig = {
   poweredByHeader: false,
   // Enable React strict mode
   reactStrictMode: true,
+  swcMinify: true,
 }
 
 mergeConfig(nextConfig, userConfig)

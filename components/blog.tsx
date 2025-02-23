@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const blogPosts = [
   {
@@ -8,18 +9,21 @@ const blogPosts = [
     excerpt: "Insights from scaling our microservices architecture to handle millions of requests.",
     date: "2023-05-15",
     slug: "scaling-microservices-lessons-learned",
+    image: "/images/blog/scaling-microservices.jpg",
   },
   {
     title: "The Future of AI in Software Development",
     excerpt: "Exploring how AI is reshaping the landscape of software development and engineering practices.",
     date: "2023-04-22",
     slug: "future-of-ai-in-software-development",
+    image: "/images/blog/future-of-ai.jpg",
   },
   {
     title: "Building a Culture of Innovation in Engineering Teams",
     excerpt: "Strategies for fostering creativity and innovation within your engineering organisation.",
     date: "2023-03-10",
     slug: "building-culture-of-innovation",
+    image: "/images/blog/building-culture-of-innovation.jpg",
   },
   // Add more blog posts as needed
 ]
@@ -32,6 +36,16 @@ const Blog = () => {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <Card key={index} className="flex flex-col">
+              {post.image && (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={200}
+                  loading="lazy"
+                  className="rounded-t-lg"
+                />
+              )}
               <CardHeader>
                 <CardTitle>{post.title}</CardTitle>
               </CardHeader>
