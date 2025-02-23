@@ -55,7 +55,7 @@ const timeline: TimelineEvent[] = [
     period: "September 2023 - May 2024",
     description: "Served as Technical Manager focusing on engineering leadership and technical strategy.",
     achievements: [],
-    technologies: [],
+    technologies: ["Java", "Spring", "GitHub", "React", "NodeJS", "TypeScript", "AWS", "PostgreSQL", "REST"],
     logo: "/logos/tripadvisor.svg"
   },
   { year: "2020",
@@ -134,7 +134,7 @@ const timeline: TimelineEvent[] = [
         period: "July 2020 - October 2020",
         description: "Contributed to technical development at ASOS as Senior Software Engineer.",
         achievements: ["Defined and implemented a new deployment pipeline for backend services"],
-        technologies: [],
+        technologies: ["Azure", "Kubernetes", "Docker", ".Net", "C# Core", "SQL Server", "Azure DevOps"],
         logo: "/logos/asos.svg"
       },
     ]
@@ -281,13 +281,13 @@ const Timeline = () => {
             </div>
           </div>
           
-          {/* Adjust the timeline lines to start from arrow circle */}
-          <div className="absolute left-1/2 transform -translate-x-px w-[2px] h-[calc(100%-3rem)] bg-purple-200/50 dark:bg-purple-800/50 top-6 z-10" />
+          {/* Adjust the timeline lines - lower z-index */}
+          <div className="absolute left-1/2 transform -translate-x-px w-[2px] h-[calc(100%-3rem)] bg-purple-200/50 dark:bg-purple-800/50 top-6 z-0" />
           <motion.div 
             initial={{ height: 0 }}
             animate={{ height: 'calc(100% - 3rem)' }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-1/2 transform -translate-x-px w-[2px] bg-purple-500 dark:bg-purple-400 origin-top top-6 z-10"
+            className="absolute left-1/2 transform -translate-x-px w-[2px] bg-purple-500 dark:bg-purple-400 origin-top top-6 z-0"
           />
 
           {timeline.map((event, index) => (
@@ -300,11 +300,13 @@ const Timeline = () => {
                   duration: 0.5,
                   ease: [0.25, 0.1, 0.25, 1]
                 }}
-                className={`relative grid grid-cols-2 gap-8 mb-16 ${
-                  index % 2 === 0 ? 'text-right' : 'text-left'
-                }`}
+                className={`relative md:grid md:grid-cols-2 gap-8 mb-16 ${
+                  index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                } text-left z-10`}
               >
-                <div className={index % 2 === 0 ? '' : 'col-start-2'}>
+                <div className={`${index % 2 === 0 ? '' : 'md:col-start-2'} ${
+                  index % 2 === 0 ? 'md:mr-4' : 'md:ml-4'
+                }`}>
                   <motion.div
                     whileHover={{ 
                       scale: 1.01,
@@ -315,15 +317,14 @@ const Timeline = () => {
                       duration: 0.2,
                       ease: "easeOut"
                     }}
-                    className={`card-hover bg-white dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl 
-                              border border-purple-100 dark:border-purple-800/30
-                              ${index % 2 === 0 ? 'mr-4' : 'ml-4'}`}
+                    className="card-hover bg-background/80 backdrop-blur-sm p-6 rounded-xl 
+                              border border-purple-100 dark:border-purple-800/30"
                   >
                     {/* Header */}
                     <div className="flex items-center gap-4 mb-6">
                       <motion.div 
                         whileHover={{ scale: 1.1 }}
-                        className={`relative w-24 h-24 ${index % 2 === 0 ? 'order-first' : 'order-last'}`}
+                        className={`relative w-24 h-24 ${index % 2 === 0 ? 'md:order-first' : 'md:order-last'} order-first`}
                       >
                         <Image
                           src={event.logo}
@@ -332,7 +333,7 @@ const Timeline = () => {
                           className="object-contain rounded-lg"
                         />
                       </motion.div>
-                      <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-left`}>
                         <motion.span 
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -351,31 +352,31 @@ const Timeline = () => {
                     <motion.p 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="text-foreground/80 dark:text-foreground/70 mb-4"
+                      className="text-foreground/80 dark:text-foreground/70 mb-4 hidden md:block"
                     >
                       {event.description}
                     </motion.p>
 
-                      {/* Achievements */}
+                    {/* Achievements */}
                     {event.achievements.length > 0 && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold mb-2 text-purple-600 dark:text-purple-400">
-                        Key Achievements
-                      </h4>
-                      <ul className="space-y-1 text-sm">
-                        {event.achievements.map((achievement, i) => (
-                          <li key={i} className="text-foreground/70 dark:text-foreground/60">
-                            • {achievement}
-                          </li>
-                        ))}
+                      <div className="mb-4 hidden md:block">
+                        <h4 className="font-semibold mb-2 text-purple-600 dark:text-purple-400">
+                          Key Achievements
+                        </h4>
+                        <ul className="space-y-1 text-sm">
+                          {event.achievements.map((achievement, i) => (
+                            <li key={i} className="text-foreground/70 dark:text-foreground/60">
+                              • {achievement}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     )}
 
                     {/* Technologies */}
                     <div>
-                      <div className={`flex flex-wrap gap-2 ${
-                        index % 2 === 0 ? 'justify-end' : 'justify-start'
+                      <div className={`flex flex-wrap gap-2 md:block${
+                        index % 2 === 0 ? 'md:justify-end justify-start' : 'justify-start'
                       }`}>
                         {event.technologies.map((tech, i) => (
                           <span
@@ -403,7 +404,7 @@ const Timeline = () => {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: projectIndex * 0.1 }}
-                              className="bg-purple-50/50 dark:bg-purple-900/20 rounded-lg p-4"
+                              className="bg-muted/50 rounded-lg p-4"
                             >
                               <div className="flex items-center gap-3 mb-3 justify-between">
                                 <div className="relative w-12 h-12">
@@ -429,12 +430,12 @@ const Timeline = () => {
                                 </div>
                               </div>
 
-                              <p className="text-sm text-foreground/80 dark:text-foreground/70 mb-3">
+                              <p className="text-sm text-foreground/80 dark:text-foreground/70 mb-3 hidden md:block">
                                 {project.description}
                               </p>
 
                               {project.achievements.length > 0 && (
-                                <div className="mb-3">
+                                <div className="mb-3 hidden md:block">
                                   <h6 className="text-sm font-medium mb-1 text-purple-600 dark:text-purple-400">
                                     Achievements
                                   </h6>
@@ -449,9 +450,7 @@ const Timeline = () => {
                               )}
 
                               {project.technologies.length > 0 && (
-                                <div className={`flex flex-wrap gap-1 ${
-                                  index % 2 === 0 ? 'justify-end' : 'justify-start'
-                                }`}>
+                                <div className={`flex flex-wrap gap-1 block justify-start`}>
                                   {project.technologies.map((tech, i) => (
                                     <span
                                       key={i}
@@ -473,7 +472,7 @@ const Timeline = () => {
                 </div>
               
                 {/* Timeline marker */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-8 z-20">
+                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 mt-8 z-20 hidden md:block">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
