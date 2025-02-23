@@ -257,13 +257,37 @@ const Timeline = () => {
         </motion.h2>
 
         <div className="relative">
-          {/* Timeline connector line */}
-          <div className="absolute left-1/2 transform -translate-x-px w-[2px] h-full bg-purple-200/50 dark:bg-purple-800/50" />
+          {/* Timeline connector line - Keep spacing below arrow but connect line */}
+          <div className="flex justify-center pb-8 relative z-20">
+            <div className="relative w-24 h-12 rounded-full bg-white dark:bg-purple-900 flex items-center justify-center border-2 border-purple-500 dark:border-purple-400">
+              <motion.div
+                initial={{ y: -5, opacity: 0 }}
+                animate={{ y: 5, opacity: 1 }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              >
+                <svg 
+                  className="w-6 h-6 text-purple-600 dark:text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </motion.div>
+            </div>
+          </div>
+          
+          {/* Adjust the timeline lines to start from arrow circle */}
+          <div className="absolute left-1/2 transform -translate-x-px w-[2px] h-[calc(100%-3rem)] bg-purple-200/50 dark:bg-purple-800/50 top-6 z-10" />
           <motion.div 
             initial={{ height: 0 }}
-            animate={{ height: '100%' }}
+            animate={{ height: 'calc(100% - 3rem)' }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-1/2 transform -translate-x-px w-[2px] bg-purple-500 dark:bg-purple-400 origin-top"
+            className="absolute left-1/2 transform -translate-x-px w-[2px] bg-purple-500 dark:bg-purple-400 origin-top top-6 z-10"
           />
 
           {timeline.map((event, index) => (
@@ -466,6 +490,45 @@ const Timeline = () => {
               </motion.div>
             </div>
           ))}
+          <div className="flex justify-center mt-8 relative z-20">
+            <div className="relative w-24 h-12 rounded-full bg-white dark:bg-purple-900 flex items-center justify-center border-2 border-purple-500 dark:border-purple-400">
+              <motion.div
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeOut"
+                }}
+              >
+                <motion.svg
+                  className="w-6 h-6 text-purple-600 dark:text-white"
+                  fill="none"
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <motion.path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{
+                      pathLength: [0, 1, 1],
+                      opacity: [0, 1, 1],
+                      scale: [1, 1, 1.2],
+                    }}
+                    transition={{
+                      duration: 3,
+                      times: [0, 0.3, 1],
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                      repeatDelay: 1
+                    }}
+                  />
+                </motion.svg>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
