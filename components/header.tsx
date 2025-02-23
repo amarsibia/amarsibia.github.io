@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-light text-gradient">
+        <Link href="/" className="text-2xl font-light bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600">
           Amar Sibia
         </Link>
         <div className="flex items-center gap-4">
