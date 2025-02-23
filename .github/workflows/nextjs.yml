@@ -79,12 +79,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-      - name: Configure caching headers
-        run: |
-          echo "/*" > ./out/_headers
-          echo "  Cache-Control: public, max-age=31536000, immutable" >> ./out/_headers
-          echo "/*.html" >> ./out/_headers
-          echo "  Cache-Control: public, max-age=0, must-revalidate" >> ./out/_headers
 
   # Deployment job
   deploy:
