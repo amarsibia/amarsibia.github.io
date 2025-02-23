@@ -38,10 +38,10 @@ const Header = () => {
             </Link>
           </nav>
           <ThemeToggle />
+          <button className="md:hidden" onClick={toggleMenu}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-        <button className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
       {isMenuOpen && (
         <nav className="md:hidden bg-background/95 backdrop-blur-sm">
