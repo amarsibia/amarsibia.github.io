@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import Image from 'next/image';
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -118,11 +119,14 @@ const Hero: FC = () => {
               17 years building and leading engineering teams — across startups, global enterprises, and most things in between. Head of Engineering at Openr. Fractional CTO for seed-stage founders. I write Straight Lines, a weekly newsletter on technology and engineering for founders.
             </motion.p>
 
-            <Button 
+            <Button
               variant="default"
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              asChild
             >
-              Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="#contact">
+                Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
 
@@ -134,7 +138,7 @@ const Hero: FC = () => {
           >
             <Image
               src="/images/profile.webp"
-              alt="Professional headshot"
+              alt="Amar Sibia - Engineering Leader and Fractional CTO"
               fill
               className="rounded-2xl object-cover shadow-2xl dark:invert"
               priority

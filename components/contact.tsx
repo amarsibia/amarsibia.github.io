@@ -51,7 +51,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Linkedin className="text-purple-600 dark:text-purple-400" />
-                    <a href="https://www.linkedin.com/in/amarsibia/" className="hover:text-purple-600 dark:hover:text-purple-400">
+                    <a href="https://www.linkedin.com/in/amarsibia/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 dark:hover:text-purple-400">
                       LinkedIn
                     </a>
                   </div>

@@ -2,6 +2,7 @@ import type React from "react"
 import "./globals.css"
 import { Manrope } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import Script from "next/script"
 
 const inter = Manrope({ subsets: ["latin"] })
 
@@ -14,22 +15,30 @@ export const metadata = {
     },
   },
   title: "Amar Sibia - Engineering Leader & Tech Innovator",
-  description: "Personal website of Amar Sibia, Head of Engineering at Openr. Experienced in software architecture, team leadership, and technical innovation.",
-  keywords: ["Engineering Leader", "Tech Innovator", "Software Architecture", "Team Leadership", "Technical Innovation", "Amar Sibia"],
+  description: "Personal website of Amar Sibia, Head of Engineering at Openr. 17 years building and leading engineering teams. Fractional CTO for seed-stage founders.",
+  keywords: ["Engineering Leader", "Tech Innovator", "Software Architecture", "Team Leadership", "Technical Innovation", "Amar Sibia", "Head of Engineering", "Fractional CTO"],
+  authors: [{ name: "Amar Sibia", url: "https://amarsibia.com" }],
   openGraph: {
     title: "Amar Sibia - Engineering Leader & Tech Innovator",
-    description: "Personal website of Amar Sibia, Head of Engineering at Openr",
+    description: "17 years building and leading engineering teams. Head of Engineering at Openr. Fractional CTO for seed-stage founders.",
     type: "website",
     locale: "en_US",
     siteName: "Amar Sibia",
     url: 'https://amarsibia.com',
-    alternateLocale: 'en_US',
+    images: [
+      {
+        url: '/images/profile.webp',
+        width: 800,
+        height: 800,
+        alt: 'Amar Sibia - Engineering Leader',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amar Sibia - Engineering Leader & Tech Innovator",
-    description: "Personal website of Amar Sibia, Head of Engineering at Openr",
-    site: '@amarsibia', // Add your Twitter handle if you have one
+    description: "17 years building and leading engineering teams. Head of Engineering at Openr. Fractional CTO for seed-stage founders.",
+    images: ['/images/profile.webp'],
   },
   robots: {
     index: true,
@@ -42,9 +51,38 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: "verification_token", // Add your Google Search Console verification token
+}
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amar Sibia",
+  "url": "https://amarsibia.com",
+  "image": "https://amarsibia.com/images/profile.webp",
+  "sameAs": [
+    "https://www.linkedin.com/in/amarsibia/",
+    "https://amarsibia.substack.com",
+  ],
+  "jobTitle": "Head of Engineering",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Openr",
   },
+  "description": "Engineering leader with 17 years of experience building and leading teams across startups and global enterprises. Head of Engineering at Openr, Fractional CTO for seed-stage founders.",
+  "knowsAbout": [
+    "Software Architecture",
+    "Engineering Leadership",
+    "Team Building",
+    "Technical Innovation",
+    "Digital Transformation",
+  ],
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Amar Sibia",
+  "url": "https://amarsibia.com",
 }
 
 export default function RootLayout({
@@ -54,6 +92,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          id="schema-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
