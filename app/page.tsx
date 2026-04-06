@@ -19,7 +19,7 @@ export default function Home() {
         <Timeline />
         <SkillsChart />
         {/* <Projects /> */}
-        {/* <Blog /> */}
+        <Blog />
         <Contact />
       </main>
       <Footer />

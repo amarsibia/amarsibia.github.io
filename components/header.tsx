@@ -30,9 +30,9 @@ const Header = () => {
             <Link href="#skills" className="hover:text-primary transition-colors">
               Skills
             </Link>
-            {/* <Link href="#blog" className="hover:text-primary transition-colors">
+            <Link href="#blog" className="hover:text-primary transition-colors">
               Blog
-            </Link> */}
+            </Link>
             <Link href="#contact" className="hover:text-primary transition-colors">
               Contact
             </Link>
@@ -58,9 +58,9 @@ const Header = () => {
             <Link href="#skills" className="hover:text-primary transition-colors" onClick={toggleMenu}>
               Skills
             </Link>
-            {/* <Link href="#blog" className="hover:text-primary transition-colors" onClick={toggleMenu}>
+            <Link href="#blog" className="hover:text-primary transition-colors" onClick={toggleMenu}>
               Blog
-            </Link> */}
+            </Link>
             <Link href="#contact" className="hover:text-primary transition-colors" onClick={toggleMenu}>
               Contact
             </Link>
