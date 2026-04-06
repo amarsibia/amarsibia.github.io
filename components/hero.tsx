@@ -140,6 +140,7 @@ const Hero: FC = () => {
               src="/images/profile.webp"
               alt="Amar Sibia - Engineering Leader and Fractional CTO"
               fill
+              sizes="(max-width: 768px) 256px, 384px"
               className="rounded-2xl object-cover shadow-2xl"
               priority
             />

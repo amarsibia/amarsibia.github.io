@@ -40,6 +40,11 @@ export const metadata = {
     description: "17 years building and leading engineering teams. Head of Engineering at Openr. Fractional CTO for seed-stage founders.",
     images: ['/images/profile.webp'],
   },
+  icons: {
+    icon: '/images/profile.webp',
+    shortcut: '/images/profile.webp',
+    apple: '/images/profile.webp',
+  },
   robots: {
     index: true,
     follow: true,
@@ -95,6 +100,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.rss2json.com" />
         <Script
           id="schema-person"
           type="application/ld+json"

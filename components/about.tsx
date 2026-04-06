@@ -41,7 +41,7 @@ const About = () => {
             {/* Main Content */}
             <motion.div variants={itemVariants} className="space-y-6">
               <p className="text-lg">
-                With over 15 years in software engineering, I've evolved from writing code to architecting solutions and leading high-performing engineering teams. My journey has been driven by a relentless curiosity and passion for technology.
+                With over 17 years in software engineering, I've evolved from writing code to architecting solutions and leading high-performing engineering teams. My journey has been driven by a relentless curiosity and passion for technology.
               </p>
               
               <p className="text-lg">

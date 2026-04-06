@@ -346,6 +346,7 @@ const Timeline = () => {
                           src={event.logo}
                           alt={event.company}
                           fill
+                          sizes="96px"
                           className="object-contain rounded-lg"
                         />
                       </motion.div>
@@ -428,6 +429,7 @@ const Timeline = () => {
                                     src={project.logo}
                                     alt={project.company}
                                     fill
+                                    sizes="48px"
                                     className="object-contain rounded"
                                   />
                                 </div>
