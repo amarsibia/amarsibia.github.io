@@ -98,24 +98,24 @@ const Hero: FC = () => {
             <div className="text-2xl text-purple-600">
               <TypeAnimation
                 sequence={[
+                  'Head of Engineering',
+                  2000,
+                  'Fractional CTO',
+                  2000,
                   'Engineering Leader',
-                  2000,
-                  'Innovation Driver',
-                  2000,
-                  'Problem Solver',
                   2000,
                 ]}
                 repeat={Infinity}
               />
             </div>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Engineering leader with a passion for building high-performing teams and delivering innovative solutions. Transforming complex challenges into scalable, efficient systems.
+              17 years building and leading engineering teams — across startups, global enterprises, and most things in between. Head of Engineering at Openr. Fractional CTO for seed-stage founders. I write Straight Lines, a weekly newsletter on technology and engineering for founders.
             </motion.p>
 
             <Button 

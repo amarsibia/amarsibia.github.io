@@ -18,7 +18,7 @@ const skillCategories: SkillCategory[] = [
       "Technical Strategy",
       "Agile Methodologies",
       "Mentorship",
-      "Process Optimisation",
+      "Hiring & Recruitment",
       "Cross-functional Leadership"
     ]
   },
@@ -39,23 +39,23 @@ const skillCategories: SkillCategory[] = [
     description: "Building scalable and reliable server-side solutions",
     skills: [
       "Node.js",
-      "Python",
       "GraphQL",
       "REST APIs",
       "PostgreSQL",
-      "MongoDB"
+      "Serverless Framework",
+      "EventBridge"
     ]
   },
   {
     name: "DevOps & Cloud",
     description: "Implementing robust cloud infrastructure and CI/CD pipelines",
     skills: [
-      "AWS",
+      "AWS Lambda",
+      "Terraform",
       "Docker",
       "Kubernetes",
       "CI/CD",
-      "Infrastructure as Code",
-      "Monitoring & Logging"
+      "ISO 27001 / SOC 2"
     ]
   }
 ]
