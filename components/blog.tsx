@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { ArrowUpRight, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -8,16 +11,6 @@ interface BlogPost {
   date: string
   url: string
   imageUrl?: string
-}
-
-function extractCdata(xml: string, tag: string): string {
-  const match = xml.match(new RegExp(`<${tag}[^>]*>(?:<!\\[CDATA\\[)?(.*?)(?:\\]\\]>)?<\\/${tag}>`, "s"))
-  return match ? match[1].trim() : ""
-}
-
-function extractAttr(xml: string, tag: string, attr: string): string {
-  const match = xml.match(new RegExp(`<${tag}[^>]*\\s${attr}="([^"]*)"`, "s"))
-  return match ? match[1] : ""
 }
 
 function formatDate(pubDate: string): string {
@@ -32,30 +25,34 @@ function formatDate(pubDate: string): string {
   }
 }
 
-async function fetchPosts(): Promise<BlogPost[]> {
-  try {
-    const res = await fetch("https://amarsibia.substack.com/feed", {
-      next: { revalidate: false },
-    })
-    const xml = await res.text()
-    const itemMatches = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
-    return itemMatches.map((m) => {
-      const item = m[1]
-      return {
-        title: extractCdata(item, "title"),
-        excerpt: extractCdata(item, "description"),
-        date: formatDate(extractCdata(item, "pubDate")),
-        url: extractCdata(item, "link"),
-        imageUrl: extractAttr(item, "enclosure", "url"),
-      }
-    })
-  } catch {
-    return []
-  }
-}
+const FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Famarsibia.substack.com%2Ffeed"
 
-const Blog = async () => {
-  const posts = await fetchPosts()
+const Blog = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([])
+
+  useEffect(() => {
+    fetch(FEED_URL)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.status !== "ok") return
+        const mapped: BlogPost[] = data.items.map((item: {
+          title: string
+          description: string
+          pubDate: string
+          link: string
+          thumbnail?: string
+        }) => ({
+          title: item.title,
+          excerpt: item.description,
+          date: formatDate(item.pubDate),
+          url: item.link,
+          imageUrl: item.thumbnail || undefined,
+        }))
+        setPosts(mapped)
+      })
+      .catch(() => {})
+  }, [])
+
   if (posts.length === 0) return null
 
   const [featured, ...rest] = posts
@@ -67,10 +64,9 @@ const Blog = async () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text-alt pb-1">
             Straight Lines
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-center mb-12">
+          <p className="text-gray-600 dark:text-gray-300 text-center">
             Clear thinking on technology for early-stage founders. Published every Wednesday.
           </p>
-            
         </div>
 
         {/* Featured post */}
