@@ -38,7 +38,12 @@ const Header = () => {
             </Link>
           </nav>
           <ThemeToggle />
-          <button className="md:hidden" onClick={toggleMenu}>
+          <button
+            className="md:hidden"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -51,9 +56,6 @@ const Header = () => {
             </Link>
             <Link href="#experience" className="hover:text-primary transition-colors" onClick={toggleMenu}>
               Experience
-            </Link>
-            <Link href="#projects" className="hover:text-primary transition-colors" onClick={toggleMenu}>
-              Projects
             </Link>
             <Link href="#skills" className="hover:text-primary transition-colors" onClick={toggleMenu}>
               Skills

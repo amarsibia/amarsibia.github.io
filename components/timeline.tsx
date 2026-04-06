@@ -284,11 +284,12 @@ const Timeline = () => {
                   repeatType: "reverse"
                 }}
               >
-                <svg 
-                  className="w-6 h-6 text-purple-600 dark:text-white" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-6 h-6 text-purple-600 dark:text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -517,8 +518,9 @@ const Timeline = () => {
                 <motion.svg
                   className="w-6 h-6 text-purple-600 dark:text-white"
                   fill="none"
-                  stroke="currentColor" 
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <motion.path
                     strokeLinecap="round"

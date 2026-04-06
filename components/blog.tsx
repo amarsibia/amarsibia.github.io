@@ -13,6 +13,10 @@ interface BlogPost {
   imageUrl?: string
 }
 
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, "").replace(/&[a-z]+;/gi, " ").trim()
+}
+
 function formatDate(pubDate: string): string {
   try {
     return new Date(pubDate).toLocaleDateString("en-GB", {
@@ -44,7 +48,7 @@ const Blog = () => {
           enclosure?: { link?: string }
         }) => ({
           title: item.title,
-          excerpt: item.description,
+          excerpt: stripHtml(item.description),
           date: formatDate(item.pubDate),
           url: item.link,
           imageUrl: item.thumbnail || item.enclosure?.link || undefined,

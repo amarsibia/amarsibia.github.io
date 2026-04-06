@@ -140,7 +140,7 @@ const Hero: FC = () => {
               src="/images/profile.webp"
               alt="Amar Sibia - Engineering Leader and Fractional CTO"
               fill
-              className="rounded-2xl object-cover shadow-2xl dark:invert"
+              className="rounded-2xl object-cover shadow-2xl"
               priority
             />
           </motion.div>
