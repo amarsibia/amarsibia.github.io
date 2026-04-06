@@ -41,12 +41,13 @@ const Blog = () => {
           pubDate: string
           link: string
           thumbnail?: string
+          enclosure?: { link?: string }
         }) => ({
           title: item.title,
           excerpt: item.description,
           date: formatDate(item.pubDate),
           url: item.link,
-          imageUrl: item.thumbnail || undefined,
+          imageUrl: item.thumbnail || item.enclosure?.link || undefined,
         }))
         setPosts(mapped)
       })
